@@ -1,5 +1,5 @@
 .rangeBoxes{
-    margin-top: 20px;
+    margin:20px 0;
     display: flex;
     justify-content: center;
     column-gap: 10px;

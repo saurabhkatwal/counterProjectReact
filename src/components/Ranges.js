@@ -9,7 +9,7 @@ export default class Ranges extends React.Component{
         return (
 <div className="rangeBoxes">
 {this.props.ranges.map(range=>(
-    <Range>{range}</Range>
+    <Range key={"id"+Math.random().toString(16).slice(2)}>{range}</Range>
 ))}
 </div>
         )
