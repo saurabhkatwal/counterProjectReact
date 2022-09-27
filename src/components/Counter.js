@@ -7,9 +7,9 @@ export default class Counter extends React.Component{
     render(){
         return(
             <div className="counter">
-                <button onClick={this.props.decrement}>-</button>
+                <button onClick={()=>this.props.decrement(this.props.step)}>-</button>
                 <h2>{this.props.initialValue}</h2>
-                <button onClick={this.props.increment}>+</button>
+                <button onClick={()=>this.props.increment(this.props.step)}>+</button>
             </div>
         )
     }

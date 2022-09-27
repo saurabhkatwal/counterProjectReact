@@ -8,21 +8,22 @@ export default class App extends React.Component{
     super(props);
     this.state={
       value:0,
-      ranges:[5,15,25,50,75,100]
+      ranges:[5,15,25,50,75,100],
+      currStep:5
     }
   }
-    increment=()=>{
+    increment=(step)=>{
       this.setState(prevState=>{
         return {
-          value:prevState.value+1
+          value:prevState.value+step
         }
       })
     }
   
-    decrement=()=>{
+    decrement=(step)=>{
       this.setState(prevState=>{
         return {
-          value:prevState.value-1
+          value:prevState.value-step
         }
       })
     }
@@ -30,7 +31,7 @@ render(){
   return(
     <div className="container">
       <Ranges ranges={this.state.ranges}/>
-      <Counter increment={this.increment} decrement={this.decrement} initialValue={this.state.value}/>
+      <Counter step={this.state.currStep} increment={this.increment} decrement={this.decrement} initialValue={this.state.value}/>
     </div>
   )
 }
