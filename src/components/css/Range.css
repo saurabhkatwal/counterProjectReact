@@ -1,0 +1,8 @@
+.range{
+    width: 100px;
+    height: 100px;
+    background-color: rgba(42, 184, 228, 0.932);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
