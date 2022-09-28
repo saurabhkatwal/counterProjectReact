@@ -31,11 +31,20 @@ export default class App extends React.Component{
     }
     clickHandler=(e)=>{
       let rangeClicked=Number(e.target.innerText);
-      this.setState(prevState=>{
-        return {
-          currStep:rangeClicked
-        }
-      })
+      if(this.state.currStep===0){
+        this.setState(prevState=>{
+          return {
+            currStep:rangeClicked
+          }
+        })
+      }
+      else{
+        this.setState(prevState=>{
+          return {
+            maxValue:rangeClicked
+          }
+        })
+      }
   }
 render(){
   return(
