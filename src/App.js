@@ -32,14 +32,14 @@ export default class App extends React.Component{
     clickHandler=(e)=>{
       let rangeClicked=Number(e.target.innerText);
       if(this.state.currStep===0){
-        this.setState(prevState=>{
+        this.setState(()=>{
           return {
             currStep:rangeClicked
           }
         })
       }
       else{
-        this.setState(prevState=>{
+        this.setState(()=>{
           return {
             maxValue:rangeClicked
           }
@@ -50,7 +50,7 @@ render(){
   return(
     <div className="container">
       <Ranges clickHandler={this.clickHandler} ranges={this.state.ranges}/>
-      <Counter step={this.state.currStep} increment={this.increment} decrement={this.decrement} initialValue={this.state.value}/>
+      <Counter maxValue={this.state.maxValue}step={this.state.currStep} increment={this.increment} decrement={this.decrement} currValue={this.state.value}/>
     </div>
   )
 }
